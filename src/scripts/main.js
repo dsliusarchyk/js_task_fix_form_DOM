@@ -11,17 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const inputs = form.querySelectorAll('input');
 
     inputs.forEach((input) => {
-      const name = input.getAttribute('name');
+      const fieldName = input.getAttribute('name');
       const label = document.createElement('label');
       label.className = 'field-label';
 
       if (!input.id) {
-        input.id = name;
+        input.id = fieldName;
       }
 
       label.setAttribute('for', input.id);
-      label.textContent = capitalize(name);
-      input.setAttribute('placeholder', capitalize(name));
+      label.textContent = capitalize(fieldName);
+      input.setAttribute('placeholder', capitalize(fieldName));
 
       input.parentElement.insertBefore(label, input);
     });
